@@ -1,9 +1,7 @@
-declare type IHAlign = "left" | "center" | "right";
-declare type IVAlign = "top" | "center" | "bottom";
-declare var module: any;
-declare var define: any;
-declare var cytoscape: any;
-interface CytoscapeNodeHtmlParams {
+import cytoscape, { Core } from 'cytoscape';
+export type IHAlign = "left" | "center" | "right";
+export type IVAlign = "top" | "center" | "bottom";
+export interface CytoscapeNodeHtmlParams {
     query?: string;
     halign?: IHAlign;
     valign?: IVAlign;
@@ -12,6 +10,7 @@ interface CytoscapeNodeHtmlParams {
     cssClass?: string;
     tpl?: (d: any) => string;
 }
-interface CytoscapeContainerParams {
+export interface CytoscapeContainerParams {
     enablePointerEvents?: boolean;
 }
+export declare function cyNodeHtmlLabel(_cy: Core, params: CytoscapeNodeHtmlParams[], options?: CytoscapeContainerParams): cytoscape.Core;

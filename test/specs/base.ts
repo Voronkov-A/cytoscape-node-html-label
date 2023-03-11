@@ -1,49 +1,49 @@
-"use strict";
+import _ from 'jasmine';
+import cytoscape, { Core } from 'cytoscape';
+import { cyNodeHtmlLabel } from "../../dist/cytoscape-node-html-label";
 
 describe('base', function () {
-  var cy;
+  let cy: Core;
   var layoutOptions = {
     name: 'grid',
     cols: 3
   };
-
+  
   beforeAll(function () {
     document.body.innerHTML += '<div id="cy"></div>';
     cy = cytoscape({
       container: document.getElementById('cy'),
       layout: layoutOptions,
-      elements: {
-        nodes: []
-      }
+      elements: []
     });
   });
 
   function isCyDefinedTest() {
     expect(cy).toBeDefined();
   }
-
+  
   function isMainDefinedTest() {
     isCyDefinedTest();
-    expect(typeof cy.nodeHtmlLabel).toEqual('function');
+    expect(typeof cyNodeHtmlLabel).toEqual('function');
   }
 
   function getWrapDiv() {
-    return document.querySelector('#cy').firstElementChild.getElementsByTagName('div')[0];
+    return document.querySelector('#cy')!.firstElementChild!.getElementsByTagName('div')[0];
   }
-
+  
   function cyInitPlugin() {
-    cy.nodeHtmlLabel([
+    cyNodeHtmlLabel(cy, [
       {
         query: '.l1',
-        wrapCssClasses: 'cy-title',
+        //wrapCssClasses: 'cy-title',
         tpl: function (data) {
           return '<p class="cy-title__p1">' + data.id + '</p>' + '<p  class="cy-title__p2">' + data.name + '</p>';
         }
       },
       {
         query: '.l2',
-        positionX: 'right',
-        wrapCssClasses: 'cy-title cy-title_right',
+        //positionX: 'right',
+        //wrapCssClasses: 'cy-title cy-title_right',
         tpl: function (data) {
           return '<p class="cy-title__p1">' + data.id + '</p>' + '<p class="cy-title__p2">' + data.name + '</p>';
         }

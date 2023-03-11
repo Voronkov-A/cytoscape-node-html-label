@@ -1,24 +1,37 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "None",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
     "lib": [
-      "ES5",
+      "ES2022",
       "dom"
     ],
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "removeComments": true,
-    "outDir": "dist",
-    "skipLibCheck": true
+    "esModuleInterop": true,
+    "suppressImplicitAnyIndexErrors": true
   },
-  "files": [
-    "./src/cytoscape-node-html-label.ts"
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "include": [
+    "./src/**/*.ts"
   ]
 }

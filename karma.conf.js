@@ -3,7 +3,7 @@ module.exports = function (config) {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
+    
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -15,7 +15,7 @@ module.exports = function (config) {
       {pattern: 'libs/cytoscape.min.js', watched: false},
       {pattern: 'dist/cytoscape-node-html-label.js', watched: false},
       {pattern: 'test/**/*.css'},
-      'test/**/*.js'
+      'test/**/*.ts'
     ],
 
 
